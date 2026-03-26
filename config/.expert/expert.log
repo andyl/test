@@ -1,0 +1,630 @@
+
+20:02:42.613 [info] Application logger started at :nonode@nohost
+
+20:02:42.614 [info] Application xp_mime started at :nonode@nohost
+
+20:02:42.614 [info] Application xp_hpax started at :nonode@nohost
+
+20:02:42.614 [info] Application crypto started at :nonode@nohost
+
+20:02:42.614 [info] Application asn1 started at :nonode@nohost
+
+20:02:42.614 [info] Application public_key started at :nonode@nohost
+
+20:02:42.615 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.105.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filters: [], filter_default: :stop, formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+
+20:02:42.616 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.109.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+20:02:42.617 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+20:02:42.618 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+20:02:42.618 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.108.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.618 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.114.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.619 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.116.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.619 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.619 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.619 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.620 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.620 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.620 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.121.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.620 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.621 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.621 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.621 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.120.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.621 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+20:02:42.621 [info] Application ssl started at :nonode@nohost
+
+20:02:42.621 [info] Application xp_mint started at :nonode@nohost
+
+20:02:42.621 [info] Application xp_nimble_options started at :nonode@nohost
+
+20:02:42.623 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.130.0> (Supervisor.Default) started
+Pid: #PID<0.131.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.623 [info] Application xp_nimble_pool started at :nonode@nohost
+
+20:02:42.624 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.135.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.624 [info] Application xp_telemetry started at :nonode@nohost
+
+20:02:42.624 [info] Application xp_finch started at :nonode@nohost
+
+20:02:42.631 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.141.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.631 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.140.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.631 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.631 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.143.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.631 [info] Child XPReq.Finch of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.139.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.631 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.631 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.145.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.632 [info] Application xp_req started at :nonode@nohost
+
+20:02:42.632 [info] Application burrito started at :nonode@nohost
+
+20:02:42.633 [info] Child XPBriefly.Entry of Supervisor XPBriefly.Supervisor started
+Pid: #PID<0.149.0>
+Start Call: XPBriefly.Entry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.633 [info] Application xp_briefly started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_schematic started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_typed_struct started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_gen_lsp started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_sourceror started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_spitfire started at :nonode@nohost
+
+20:02:42.633 [info] Application xp_forge started at :nonode@nohost
+
+20:02:42.637 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.153.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+
+20:02:42.637 [info] Application runtime_tools started at :nonode@nohost
+
+20:02:42.637 [info] Application et started at :nonode@nohost
+
+20:02:42.637 [info] Application observer started at :nonode@nohost
+
+20:02:42.637 [info] Application xp_path_glob started at :nonode@nohost
+
+20:02:42.639 instance_id=19D28181ECD [info] Expert v0.1.0-rc.6 starting on stdio
+
+20:02:42.642 instance_id=19D28181ECD [info] Starting NodePortMapper on nonode@nohost
+
+20:02:42.643 instance_id=19D28181ECD [info] Child XPForge.NodePortMapper of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.158.0>
+Start Call: XPForge.NodePortMapper.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.643 instance_id=19D28181ECD [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.643 instance_id=19D28181ECD [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.643 instance_id=19D28181ECD [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.644 instance_id=19D28181ECD [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.644 instance_id=19D28181ECD [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+20:02:42.645 instance_id=19D28181ECD [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.645 instance_id=19D28181ECD [info] Child XPExpert.ActiveProjects of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.ActiveProjects.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.645 instance_id=19D28181ECD [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+
+20:02:42.649 instance_id=19D28181ECD [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.166.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+
+20:02:42.649 instance_id=19D28181ECD [info] Application xp_expert started at :nonode@nohost
+
+20:02:42.696 instance_id=19D28181ECD [debug] handled request client -> server initialize in 43ms
+
+20:02:42.699 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:42.699 instance_id=19D28181ECD [info] Server initialized, registering capabilities
+
+20:02:42.700 instance_id=19D28181ECD [debug] sent request server -> client client/registerCapability
+
+20:02:42.705 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:42.705 instance_id=19D28181ECD [debug] handled notification client -> server initialized in 6ms
+
+20:02:42.705 instance_id=19D28181ECD [info] Starting project
+
+20:02:42.708 instance_id=19D28181ECD [info] Child {XPExpert.EngineSupervisor, "test::74421163"} of Supervisor :"test::74421163::supervisor" started
+Pid: #PID<0.172.0>
+Start Call: XPExpert.EngineSupervisor.start_link(%XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 61729})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:42.709 instance_id=19D28181ECD [debug] sent request server -> client window/workDoneProgress/create
+
+20:02:42.709 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:42.709 instance_id=19D28181ECD [info] Opened file:///home/aleak/zz/test/config/config.exs
+
+20:02:42.709 instance_id=19D28181ECD [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+20:02:42.710 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:42.713 instance_id=19D28181ECD [info] Child XPForge.EPMD of Supervisor :net_sup started
+Pid: #PID<0.175.0>
+Start Call: XPForge.EPMD.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+20:02:42.714 instance_id=19D28181ECD [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.176.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+20:02:42.715 instance_id=19D28181ECD [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.177.0>
+Start Call: :net_kernel.start_link(%{name: :"expert-manager-test-61729@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+20:02:42.715 instance_id=19D28181ECD [debug] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.174.0>
+Start Call: :erl_distribution.start_link(%{name: :"expert-manager-test-61729@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+
+20:02:42.717 instance_id=19D28181ECD [debug] sent request server -> client window/workDoneProgress/create
+
+20:02:42.721 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:43.184 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:43.184 instance_id=19D28181ECD [info] Using path: /home/aleak/.local/share/.burrito/expert_erts-15.2.7_0.1.0-rc.6/erts-15.2.7/bin:/home/aleak/.local/share/.burrito/expert_erts-15.2.7_0.1.0-rc.6/bin:/home/aleak/.local/share/nvim/PRO/mason/bin:/home/aleak/.opencode/bin:/home/aleak/.asdf/shims:/home/aleak/.local/bin:/home/aleak/util/code_util/bin/nvidia:/home/aleak/.bun/bin:/home/aleak/src/pro_gen/scripts:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/aleak/util/base_util/bin:/home/aleak/util/code_util/bin:/home/aleak/util/deck_util/bin:/home/aleak/util/edit_util/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/aleak/.bin:/home/aleak/.local/bin:/home/aleak/var/data/bin/x86_64:/home/aleak/dks/bin::/usr/local/cuda-12.6/bin:/home/aleak/.fzf/bin:/home/aleak/.npm-global/bin:./node_modules/.bin:/home/aleak/.mix/escripts:/home/aleak/.go/bin:/home/aleak/.cargo/bin
+
+20:02:43.184 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:43.184 instance_id=19D28181ECD [info] Found elixir executable at /home/aleak/.asdf/shims/elixir
+
+20:02:43.184 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:43.184 instance_id=19D28181ECD [info] Found erl executable at /home/aleak/.asdf/shims/erl
+
+20:02:43.185 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:43.185 instance_id=19D28181ECD [info] Preparing engine
+
+20:02:44.434 instance_id=19D28181ECD [debug] Engine build output: Namespacing 12 files:
+
+20:02:44.434 instance_id=19D28181ECD [debug] Engine build output: New: 4
+
+20:02:44.434 instance_id=19D28181ECD [debug] Engine build output: Changed: 8
+
+20:02:44.434 instance_id=19D28181ECD [debug] Engine build output: Deleted: 4
+
+20:02:44.434 instance_id=19D28181ECD [debug] Engine build output: 
+
+20:02:44.438 instance_id=19D28181ECD [debug] Engine build output: Rewriting 0 app files
+
+20:02:44.439 instance_id=19D28181ECD [debug] Engine build output: Rewriting .beam files
+
+20:02:44.440 instance_id=19D28181ECD [debug] Engine build output: Found 0 protocols
+
+20:02:44.440 instance_id=19D28181ECD [debug] Engine build output: Found 0 app beam files
+
+20:02:44.440 instance_id=19D28181ECD [debug] Engine build output: Finished namespacing .beam files
+
+20:02:44.441 instance_id=19D28181ECD [debug] Engine build output: Rewriting 0 scripts
+
+20:02:44.442 instance_id=19D28181ECD [debug] Engine build output: Rebuilding 0 boot files
+
+20:02:44.443 instance_id=19D28181ECD [debug] Engine build output: Rewriting 0 config scripts.
+
+20:02:44.447 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:44.447 instance_id=19D28181ECD [info] Engine available at: /home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns
+
+20:02:44.473 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:44.473 instance_id=19D28181ECD [info] ebin paths:
+["/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/patch/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_briefly/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_bunt/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_credo/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_deps_nix/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_elixir_sense/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_engine/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_file_system/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_forge/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_gen_lsp/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_hpax/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_jason/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_mint/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_nimble_options/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_nimble_parsec/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_path_glob/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_refactorex/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_schematic/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_sourceror/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_spitfire/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_telemetry/ebin",
+ "/home/aleak/.cache/expert/0.1.0-rc.6/ex-1.19.5-erl-16.2.1/avRV1G_4yK05cj-80VitWg/_build/dev_ns/lib/xp_typed_struct/ebin"]
+
+20:02:44.492 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:44.492 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:44.996 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:44.999 instance_id=19D28181ECD [debug] Node port message: ok
+
+
+20:02:45.141 instance_id=19D28181ECD [debug] Node port message: 
+20:02:45.134 [notice] Application mix exited: :stopped
+
+
+20:02:45.155 instance_id=19D28181ECD [debug] Node port message:     warning: redefining module Test.MixProject (current version defined in memory)
+    │
+  1 │ defmodule Test.MixProject do
+    │ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    │
+    └─ /home/aleak/zz/test/mix.exs:1: Test.MixProject (module)
+
+
+
+20:02:45.162 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.162 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.167 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.262 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.263 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.263 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.263 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.263 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.264 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.264 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.264 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.264 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.264 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.265 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.266 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.266 instance_id=19D28181ECD [debug] sent notification server -> client $/progress
+
+20:02:45.267 instance_id=19D28181ECD [info] Child {XPExpert.Project.Node, "test::74421163"} of Supervisor :"test::74421163::supervisor" started
+Pid: #PID<0.173.0>
+Start Call: XPExpert.Project.Node.start_link(%XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 61729})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:45.268 instance_id=19D28181ECD [info] Child {XPExpert.Project.Diagnostics, "test::74421163"} of Supervisor :"test::74421163::supervisor" started
+Pid: #PID<0.207.0>
+Start Call: XPExpert.Project.Diagnostics.start_link(%XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 61729})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:45.269 instance_id=19D28181ECD [info] Child {XPExpert.Project.Intelligence, "test::74421163"} of Supervisor :"test::74421163::supervisor" started
+Pid: #PID<0.208.0>
+Start Call: XPExpert.Project.Intelligence.start_link(%XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 61729})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:45.270 instance_id=19D28181ECD [info] Child XPExpert.Project.SearchListener of Supervisor :"test::74421163::supervisor" started
+Pid: #PID<0.209.0>
+Start Call: XPExpert.Project.SearchListener.start_link(%XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 61729})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+20:02:45.270 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:45.270 instance_id=19D28181ECD [info] Started project node for test
+
+20:02:45.271 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:45.271 instance_id=19D28181ECD [info] Engine initialized for project test
+
+20:02:45.328 instance_id=19D28181ECD [debug] Node port message: 
+20:02:45.328 [info] Building test
+
+
+20:02:45.328 instance_id=19D28181ECD [debug] Node port message: 
+20:02:45.328 [debug] sent request server -> client window/workDoneProgress/create
+
+
+20:02:46.341 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:46.341 instance_id=19D28181ECD [info] Compiled test in 1.0 seconds
+
+20:02:46.342 instance_id=19D28181ECD [debug] sent notification server -> client window/logMessage
+
+20:02:46.342 instance_id=19D28181ECD [error] Invalid diagnostic: {:exception, {%ErlangError{original: {:erpc, :timeout}, reason: nil}, [{:erpc, :call, 5, [file: ~c"erpc.erl", line: 1392]}, {XPEngine.Progress, :run_with_progress, 3, [file: ~c"lib/engine/progress.ex", line: 6]}, {Mix.Project, :in_project, 4, [file: ~c"lib/mix/project.ex", line: 557]}, {File, :cd!, 2, [file: ~c"lib/file.ex", line: 2013]}, {XPEngine.Mix, :"-in_project/2-fun-0-", 3, [file: ~c"lib/engine/mix.ex", line: 27]}, {:global, :trans, 4, [file: ~c"global.erl", line: 703]}, {:timer, :tc, 2, [file: ~c"timer.erl", line: 599]}, {XPEngine.Build.State, :"-compile_project/2-fun-1-", 3, [file: ~c"lib/engine/build/state.ex", line: 106]}]}, [{:erpc, :call, 5, [file: ~c"erpc.erl", line: 1392]}, {XPEngine.Progress, :run_with_progress, 3, [file: ~c"lib/engine/progress.ex", line: 6]}, {Mix.Project, :in_project, 4, [file: ~c"lib/mix/project.ex", line: 557]}, {File, :cd!, 2, [file: ~c"lib/file.ex", line: 2013]}, {XPEngine.Mix, :"-in_project/2-fun-0-", 3, [file: ~c"lib/engine/mix.ex", line: 27]}, {:global, :trans, 4, [file: ~c"global.erl", line: 703]}, {:timer, :tc, 2, [file: ~c"timer.erl", line: 599]}, {XPEngine.Build.State, :"-compile_project/2-fun-1-", 3, [file: ~c"lib/engine/build/state.ex", line: 106]}]}
+
+20:02:46.344 instance_id=19D28181ECD [debug] Node port message: 
+20:02:46.344 [info] Plugins found 0 results in 0.018 ms
+
+
+20:02:46.355 instance_id=19D28181ECD [debug] Node port message: 
+20:02:46.355 [debug] sent request server -> client window/workDoneProgress/create
+
+
+20:02:47.380 instance_id=19D28181ECD [debug] Node port message: 
+20:02:47.362 [error] GenServer XPEngine.Search.Store.Backends.Ets terminating
+** (stop) {:erpc, :timeout}
+    (kernel 10.5) erpc.erl:1392: :erpc.call/5
+    (xp_engine 0.1.0-rc.6) lib/engine/progress.ex:6: XPEngine.Progress.run_with_progress/3
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/wal.ex:320: XPEngine.Search.Store.Backends.Ets.Wal.load_latest_checkpoint/1
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/wal.ex:77: XPEngine.Search.Store.Backends.Ets.Wal.load/4
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/schema.ex:183: XPEngine.Search.Store.Backends.Ets.Schema.load_initial_schema/2
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/schema.ex:95: XPEngine.Search.Store.Backends.Ets.Schema.load/2
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/state.ex:46: XPEngine.Search.Store.Backends.Ets.State.prepare/1
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets.ex:128: XPEngine.Search.Store.Backends.Ets.handle_call/3
+Last message (from #PID<0.232.0>): :prepare
+State: %XPEngine.Search.Store.Backends.Ets.State{project: %XPForge.Project{root_uri: "file:///home/aleak/zz/test", mix_exs_uri: "file:///home/aleak/zz/test/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: Test.MixProject, entropy: 61729}, table_name: nil, leader?: true, leader_pid: #PID<0.223.0>, wal_state: nil}
+Client #PID<0.232.0> is alive
+
+    (stdlib 7.2.1) gen.erl:243: :gen.do_call/4
+    (elixir 1.19.5) lib/gen_server.ex:1139: GenServer.call/3
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/state.ex:259: anonymous fn/2 in XPEngine.Search.Store.State.prepare_backend_async/2
+    (elixir 1.19.5) lib/task/supervised.ex:105: Task.Supervised.invoke_mfa/2
+    (elixir 1.19.5) lib/task/supervised.ex:40: Task.Supervised.reply/4
+
+
+20:02:47.384 instance_id=19D28181ECD [debug] Node port message: 
+20:02:47.380 [error] Task #PID<0.232.0> started from XPEngine.Search.Store terminating
+** (stop) exited in: GenServer.call(#PID<0.223.0>, :prepare, :infinity)
+    ** (EXIT) an exception was raised:
+        ** (ErlangError) Erlang error: {:erpc, :timeout}
+            (kernel 10.5) erpc.erl:1392: :erpc.call/5
+            (xp_engine 0.1.0-rc.6) lib/engine/progress.ex:6: XPEngine.Progress.run_with_progress/3
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/wal.ex:320: XPEngine.Search.Store.Backends.Ets.Wal.load_latest_checkpoint/1
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/wal.ex:77: XPEngine.Search.Store.Backends.Ets.Wal.load/4
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/schema.ex:183: XPEngine.Search.Store.Backends.Ets.Schema.load_initial_schema/2
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/schema.ex:95: XPEngine.Search.Store.Backends.Ets.Schema.load/2
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets/state.ex:46: XPEngine.Search.Store.Backends.Ets.State.prepare/1
+            (xp_engine 0.1.0-rc.6) lib/engine/search/store/backends/ets.ex:128: XPEngine.Search.Store.Backends.Ets.handle_call/3
+    (elixir 1.19.5) lib/gen_server.ex:1142: GenServer.call/3
+    (xp_engine 0.1.0-rc.6) lib/engine/search/store/state.ex:259: anonymous fn/2 in XPEngine.Search.Store.State.prepare_backend_async/2
+    (elixir 1.19.5) lib/task/supervised.ex:105: Task.Supervised.invoke_mfa/2
+    (elixir 1.19.5) lib/task/supervised.ex:40: Task.Supervised.reply/4
+Function: #Function<3.21070753/0 in XPEngine.Search.Store.State.prepare_backend_async/2>
+    Args: []
+
